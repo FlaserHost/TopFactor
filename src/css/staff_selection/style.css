@@ -651,7 +651,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .solutions-container p,
 .solution-item > ul > li {
-    font-size: 13px;
+    font-size: 16px;
     color: #292929;
     line-height: 18px;
 }
