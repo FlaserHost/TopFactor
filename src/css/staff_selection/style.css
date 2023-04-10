@@ -535,6 +535,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .grid-item-logo {
     width: 44px;
     height: 44px;
+    max-width: initial;
 }
 
 .grid-item:last-child .grid-item-logo {
