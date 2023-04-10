@@ -104,7 +104,12 @@
     .stages {
         padding: 80px 10px;
     }
-
+    
+    .solutions-container p,
+    .solution-item > ul > li {
+        font-size: 13px;   
+    }
+    
     .field-area {
         width: 230px;
     }
@@ -208,8 +213,14 @@
 
     .solutions-container {
         justify-content: center;
+        flex-wrap: wrap;
     }
-
+    
+    .solutions-container p,
+    .solution-item > ul > li {
+        font-size: 16px;   
+    }
+    
     .demo-test-blue-block__text > h2 {
         font-size: 27px;
     }
