@@ -1764,3 +1764,8 @@ article.fixed-header-bg-color * {
 .rates-table-link:hover {
     text-decoration: underline;
 }
+
+.request-rate-flex {
+    display: flex;
+    justify-content: center;
+}
