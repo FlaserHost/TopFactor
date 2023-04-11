@@ -96,6 +96,19 @@ document.getElementById('calculate-btn').addEventListener('click', e => {
     e.preventDefault();
     const calculateForm = document.getElementById('new-calculator-form');
     const calculateData = [...new FormData(calculateForm)]; // аналогично как Array.from(new FormData(calculateForm))
+    
+    if (calculateData[0][1] === '')
+    {
+        document.getElementById('kedo-field').value = 300;
+        calculateData[0][1] = 300;
+    }
+
+    if (calculateData[1][1] === '')
+    {
+        document.getElementById('vcep-field').value = 2;
+        calculateData[1][1] = 2;
+    }
+    
     const retailYearD3 = (calculateData[0][1] * unepRetail) + (calculateData[1][1] * ukepRetail);
     const retailYearD4 = parametrs[calculateData[2][1]];
     const summaFastStart = Math.round((retailYearD3 + retailYearD4) / 12);
