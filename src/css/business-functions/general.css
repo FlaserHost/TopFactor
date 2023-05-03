@@ -7,7 +7,7 @@
     width: 100%;
     max-width: 1140px;
     margin: 0 auto;
-    padding: 80px 20px;
+    padding: 80px 20px 20px;
 }
 
 .page-destination-header {
@@ -117,8 +117,18 @@
     font-family: HelveticaNeueCyr-Roman, Arial, sans-serif;
 }
 
-.page-image {
+/*.page-image {
     text-align: right;
+}*/
+
+.page-image:nth-child(2) {
+    margin-top: 20px;
+}
+
+.page-image figure,
+.page-image a {
+    cursor: default;
+    pointer-events: none;
 }
 
 .page-img {
@@ -126,6 +136,7 @@
     transition: box-shadow .4s;
     cursor: zoom-in;
     border: 1px solid #ccc;
+    pointer-events: all;
 }
 
 .page-img:hover {
