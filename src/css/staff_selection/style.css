@@ -1769,3 +1769,13 @@ article.fixed-header-bg-color * {
     display: flex;
     justify-content: center;
 }
+
+.main-content__scheme {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.main-content__scheme > svg {
+    width: 100%;
+}
