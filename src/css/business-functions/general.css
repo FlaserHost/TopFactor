@@ -121,10 +121,6 @@
     text-align: right;
 }*/
 
-.page-image:nth-child(2) {
-    margin-top: 20px;
-}
-
 .page-image figure,
 .page-image a {
     cursor: default;
@@ -178,7 +174,7 @@
 }
 
 .page-destination-body__main-body > div:nth-child(odd):not(:first-child) {
-    margin-top: 60px;
+    margin-top: 45px;
 }
 
 .page-text__list > li:not(:first-child) {
