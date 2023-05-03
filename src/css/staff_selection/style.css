@@ -1784,14 +1784,29 @@ a:hover > rect,
 a:not(:hover) > rect,
 a:hover > path,
 a:not(:hover) > path {
-    transition: .4s;
+  transition: .4s;
+}
+        
+a:hover > path {
+  fill: #000;
 }
 
-.link:hover > rect {
-    fill: #0ff;
-    border: 1px solid #000;
+.selecting-link:hover > rect {
+  fill: #88A6FF;
 }
 
-.link:hover > path {
-    fill: #000;
+.engagement-link:hover > rect {
+   fill: #C9B3F7;
+}
+
+.talents-link:hover > rect {
+   fill: #FDD27B;
+}
+
+.solutions-link:hover > rect {
+   fill: #FF947D;
+}
+
+.kabinet-link:hover > rect {
+   fill: #99E399;
 }
