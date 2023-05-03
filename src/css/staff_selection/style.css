@@ -1779,3 +1779,19 @@ article.fixed-header-bg-color * {
 .main-content__scheme > svg {
     width: 100%;
 }
+
+a:hover > rect,
+a:not(:hover) > rect,
+a:hover > path,
+a:not(:hover) > path {
+    transition: .4s;
+}
+
+.link:hover > rect {
+    fill: #0ff;
+    border: 1px solid #000;
+}
+
+.link:hover > path {
+    fill: #000;
+}
