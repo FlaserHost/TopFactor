@@ -1784,11 +1784,19 @@ a:hover > rect,
 a:not(:hover) > rect,
 a:hover > path,
 a:not(:hover) > path {
-  transition: .4s;
+  transition-duration: .4s;
 }
-        
-a:hover > path {
+
+a:not(.central-link):hover > path {
   fill: #000;
+}
+
+.central-link:hover > path {
+  fill: #fff;
+}
+
+.central-link:hover > rect {
+  fill: #36A5E6;
 }
 
 .selecting-link:hover > rect {
@@ -1796,17 +1804,37 @@ a:hover > path {
 }
 
 .engagement-link:hover > rect {
-   fill: #C9B3F7;
+  fill: #C9B3F7;
 }
 
 .talents-link:hover > rect {
-   fill: #FDD27B;
+  fill: #FDD27B;
 }
 
 .solutions-link:hover > rect {
-   fill: #FF947D;
+  fill: #FF947D;
 }
 
 .kabinet-link:hover > rect {
-   fill: #99E399;
+  fill: #99E399;
+}
+
+a.personal-branch:hover > path {
+  fill: #3F6FFF;
+}
+
+a.engagement-branch:hover > path {
+  fill: #A179F0;
+}
+
+a.talents-branch:hover > path {
+  fill: #FBAC06;
+}
+
+a.KPI-branch:hover > path {
+  fill: #FF3F19;
+}
+
+a.KEDO-branch:hover > path {
+   fill: #3DCB3E;
 }
