@@ -7,11 +7,13 @@
   <link rel="shortcut icon" href="../../../src/img/favicon.ico">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
   <link rel="stylesheet" href="../../../src/css/staff_selection/style.css">
   <link rel="stylesheet" href="../../../src/css/business-functions/general.css">
   <link rel="stylesheet" href="../../../src/css/staff_selection/adaptive.css">
   <link rel="stylesheet" href="../../../src/css/business-functions/general-adaptive.css">
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 </head>
 <body>
 <header class="page-header">
@@ -312,7 +314,7 @@
       </div>
     </div>
   </section>
-  <section class="main-content__page-destination">
+  <section class="main-content__page-destination" id="content">
     <div class="page-destination-content">
       <div class="page-destination-header">
         <a class="back-link" href="../../../index.html">Назад</a>
@@ -323,23 +325,44 @@
           <nav>
             <ul class="menu-list">
               <li class="menu-list-item">
-                <a class="menu-item-link" href="electronic-employee-directory.html">Электронный каталог сотрудников</a>
+                <a class="menu-item-link" href="electronic-employee-directory.html#content">Электронный каталог сотрудников</a>
               </li>
               <li class="menu-list-item">
-                <a class="menu-item-link" href="harmonization-of-KPIs-and-bonuses.html">Согласование KPI и премия</a>
+                <a class="menu-item-link" href="harmonization-of-KPIs-and-bonuses.html#content">Результативность: Согласование KPI и премия</a>
               </li>
               <li class="menu-list-item">
-                <a class="menu-item-link" href="evaluation-and-development-plans.html">Оценка и планы развития</a>
+                <a class="menu-item-link" href="evaluation-and-development-plans.html#content">Оценка кандидата и чат-боты</a>
               </li>
               <li class="menu-list-item">
-                <a class="menu-item-link" href="induction.html">Ввод в должность</a>
+                <a class="menu-item-link" href="induction.html#content">Оценка и планы развития компетенций</a>
               </li>
               <li class="menu-list-item">
-                <a class="menu-item-link active-menu-item" href="">Вовлеченность и выгорание</a>
+                <a class="menu-item-link active-menu-item" href="#">Вовлеченность и выгорание</a>
               </li>
             </ul>
           </nav>
         </aside>
+        <div class="page-destination-body__main-body">
+          <div class="page-image">
+            <a href="../../../src/img/business-functions/single-point-of-access-to-hr-services/6_5.png" data-fancybox="image">
+              <figure>
+                <img class="page-img page-img-1 technical" src="../../../src/img/business-functions/single-point-of-access-to-hr-services/6_5.png" alt="">
+              </figure>
+            </a>
+          </div>
+          <div class="page-text">
+            <h3>Оценка и планы развития компетенций</h3>
+            <p>
+              Задача программного продукта <a class="link-inside-text" href="https://topfactor.pro/others/employee-engagement/">«ТопФактор:Управление командной вовлеченностью»</a> в том,
+              чтобы наиболее ценные сотрудники работали в компании как можно дольше,
+              т.е. были удовлетворены, вовлечены и лояльны. С помощью коротких пульс-опросов
+              в мессенджерах продукт позволяет собрать информацию об индивидуальных мотиваторах
+              для каждого сотрудника (их всего 10, но для каждого человека их значимость и приоритезация разные),
+              об <a class="link-inside-text" href="https://topfactor.pro/blog/diagnostika-vovlechennosti-i-motivatsii-personala-keys-odnoy-kompanii/">уровне корпоративной культуры</a> и предпочитаемых ролях в команде. Также с помощью корпоративных
+              мессенджеров и используемой ИТ-инфраструктуры можно собрать данные и провести диагностику выгорания по цифровому следу сотрудника.
+            </p>
+          </div>
+        </div>
       </article>
     </div>
   </section>
@@ -1185,6 +1208,6 @@
 <script src="../../../src/js/business-functions/general.js"></script>
 <script src="../../../src/js/global/details.js"></script>
 <script src="../../../src/js/global/calculator.js"></script>
-<script src="../../../src/js/business-functions/mover.js"></script>
+<script src="../../../src/js/business-functions/fancybox.js"></script>
 </body>
 </html>
