@@ -228,3 +228,20 @@
 .page-text > p.without-padding-bottom {
     padding-bottom: 0;
 }
+
+.technical {
+    width: 320px;
+    border: none;
+}
+
+.link-inside-text {
+    display: inline;
+}
+
+.page-text .link-inside-text {
+    display: inline;
+}
+
+.evaluation-img {
+    width: 510px;
+}
