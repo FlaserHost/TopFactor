@@ -129,7 +129,7 @@ document.getElementById('calculate-btn').addEventListener('click', e => {
     if (discount.length)
     {
         discount.forEach(item => item.remove());
-        fastStart.forEach((item, index) => item.classList.remove('discount-old-price'));
+        fastStart.forEach(item => item.classList.remove('discount-old-price'));
     }
 
     let summaFastStartFormatted;
@@ -151,7 +151,7 @@ document.getElementById('calculate-btn').addEventListener('click', e => {
                     <div class="discount-deadline">Срок действия акции до 01.09.2023</div>
              </div>`;
 
-        fastStart.forEach((item, index) => item.classList.add('discount-old-price'));
+        fastStart.forEach(item => item.classList.add('discount-old-price'));
         prices.forEach(item => item.insertAdjacentHTML('afterbegin', newPrice));
     }
 
