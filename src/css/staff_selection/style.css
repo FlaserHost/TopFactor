@@ -1586,6 +1586,7 @@ div.social-links {
     border: 1px solid #17A5A3;
     transition-duration: .4s;
     margin-top: 15px;
+    text-align: center;
 }
 
 .price {
