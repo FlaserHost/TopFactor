@@ -126,12 +126,10 @@ document.getElementById('calculate-btn').addEventListener('click', e => {
     const fastStart = document.querySelectorAll('.fast-start');
     const discount = document.querySelectorAll('.price-after-discount');
 
-    const classes = ['discount-old-price', 'discount-old-price-mobile'];
-
     if (discount.length)
     {
         discount.forEach(item => item.remove());
-        fastStart.forEach((item, index) => item.classList.remove(classes[index]));
+        fastStart.forEach((item, index) => item.classList.remove('discount-old-price'));
     }
 
     let summaFastStartFormatted;
@@ -148,16 +146,13 @@ document.getElementById('calculate-btn').addEventListener('click', e => {
         const resultDiscount = calculation(calculateData[0][1], 0, calculateData[2][1], 0.6);
         summaFastStartFormattedDiscount = resultDiscount[0];
 
-        const newPrice = [
-            `<div class="price-after-discount">
+        const newPrice = `<div class="price-after-discount">
                     <span class="discount-new-price">${summaFastStartFormattedDiscount} руб</span>
                     <div class="discount-deadline">Срок действия акции до 01.09.2023</div>
-             </div>`,
-            `<span class="price-after-discount discount-new-price-mobile">${summaFastStartFormattedDiscount} руб</span>`
-        ];
+             </div>`;
 
-        fastStart.forEach((item, index) => item.classList.add(classes[index]));
-        prices.forEach((item, index) => item.insertAdjacentHTML('afterbegin', newPrice[index]));
+        fastStart.forEach((item, index) => item.classList.add('discount-old-price'));
+        prices.forEach(item => item.insertAdjacentHTML('afterbegin', newPrice));
     }
 
     fastStart.forEach(item => item.innerHTML = `${summaFastStartFormatted} руб`);
