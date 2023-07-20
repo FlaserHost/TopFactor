@@ -185,6 +185,45 @@
     }
 }
 
+@media (max-width: 661px) {
+    .field-area,
+    .new-form-btn-2 {
+        width: 100%;
+    }
+
+    .form-field {
+        padding-right: 35px;
+    }
+
+    .new-form-btn-1,
+    .rates-outer-block,
+    .showed-link,
+    .rates-outer-block {
+        display: none;
+    }
+
+    .new-calculator-form__new-form-fields,
+    .new-form-btns,
+    .triangle-btn,
+    .rates-outer-block-mobile {
+        display: block;
+    }
+
+    .field-description > label {
+        font-size: 16px;
+    }
+
+    .new-form-btn-2:hover {
+        background-color: #0072BC;
+        color: #fff;
+    }
+
+    .new-form-btn-2:active {
+        background-color: transparent;
+        color: #0072BC;
+    }
+}
+
 @media (max-width: 426px) {
     .phone-number {
         font-size: 15px;
