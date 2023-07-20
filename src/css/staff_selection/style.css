@@ -1776,40 +1776,21 @@ article.fixed-header-bg-color * {
     display: inline-block;
 }
 
-.discount-old-price,
-.discount-old-price-mobile {
+.discount-old-price {
     color: #828282;
     text-decoration: line-through;
     font-size: 15px;
     white-space: nowrap;
-}
-
-.discount-old-price {
     position: absolute;
     top: 59%;
     transform: translateY(-50%);
     left: calc(100% + 10px);
 }
 
-.discount-old-price-mobile {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: calc(100% + 10px);
-}
-
-.discount-new-price,
-.discount-new-price-mobile {
+.discount-new-price {
     color: #f00;
     font-weight: 900;
-}
-
-.discount-new-price {
     font-size: 20px;
-}
-
-.discount-new-price-mobile {
-    font-size: 18px;
 }
 
 .price-after-discount {
