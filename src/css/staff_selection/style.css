@@ -1337,7 +1337,8 @@ div.social-links {
     position: relative;
 }
 
-.question-hint {
+.question-hint,
+.discount-deadline {
     position: absolute;
     left: 0;
     top: calc(100% + 10px);
