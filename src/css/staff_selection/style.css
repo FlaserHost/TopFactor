@@ -1808,6 +1808,14 @@ article.fixed-header-bg-color * {
     line-height: 24px;
 }
 
+.fixed-header-bg-color .discount-deadline {
+    color: #000;
+}
+
+.fixed-header-bg-color .discount-new-price {
+    color: #f00;
+}
+
 .main-content__scheme {
     width: 100%;
     max-width: 1140px;
