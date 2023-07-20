@@ -1811,6 +1811,20 @@ article.fixed-header-bg-color * {
     font-size: 18px;
 }
 
+.price-after-discount {
+    position: relative;
+}
+
+.price-after-discount:hover > .discount-deadline {
+    opacity: 1;
+}
+
+.discount-deadline {
+    top: -15px;
+    left: 60%;
+    line-height: 24px;
+}
+
 .main-content__scheme {
     width: 100%;
     max-width: 1140px;
