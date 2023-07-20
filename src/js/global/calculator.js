@@ -1,5 +1,5 @@
 // треугольники регулировщики
-const triangles = Array.from(document.querySelectorAll('.triangle-btn'));
+const triangles = document.querySelectorAll('.triangle-btn');
 
 triangles.forEach(triangle => {
     triangle.addEventListener('click', e => {
@@ -25,7 +25,7 @@ triangles.forEach(triangle => {
 });
 
 // ограничение числовых полей
-const numberFields = Array.from(document.querySelectorAll('.new-calculator-form input.form-field'));
+const numberFields = document.querySelectorAll('.new-calculator-form input.form-field');
 numberFields.forEach(field => field.addEventListener('input', e => {
     const thisField = e.target.getAttribute('id');
     const limit = thisField === 'kedo-field' ? 30000 : 100;
@@ -78,8 +78,6 @@ document.getElementById('show-functionality-btn').addEventListener('click', btn 
     btn.target.innerText = currentBtnText;
 });
 
-
-
 // логика рассчета
 const unepRetail = 560; // B20
 const ukepRetail = 1800; // B21
@@ -92,29 +90,76 @@ const parametrs = { // A23 и ниже
     200: 1726920,
     300: 2590380
 };
+
+const calculation = (data0_1, data1_1, data2_1, discountCoefficient) => {
+    if (data0_1 === '')
+    {
+        document.getElementById('kedo-field').value = 300;
+        data0_1 = 300;
+    }
+
+    if (data1_1 === '')
+    {
+        document.getElementById('vcep-field').value = 2;
+        data1_1 = 2;
+    }
+
+    const retailYearD3 = (data0_1 * unepRetail) + (data1_1 * ukepRetail);
+    const retailYearD4 = parametrs[data2_1];
+    const addition = (retailYearD3 + retailYearD4) * discountCoefficient;
+
+    const summaFastStart = Math.round(addition / 12);
+    const summaFastStartFormatted = summaFastStart.toLocaleString();
+    const summaExtendedFormatted = (summaFastStart + 13708).toLocaleString(); // 164500 / 12 = 13 708.33333333
+
+    return [summaFastStartFormatted, summaExtendedFormatted];
+}
+
 document.getElementById('calculate-btn').addEventListener('click', e => {
     e.preventDefault();
     const calculateForm = document.getElementById('new-calculator-form');
     const calculateData = [...new FormData(calculateForm)]; // аналогично как Array.from(new FormData(calculateForm))
-    
-    if (calculateData[0][1] === '')
+
+    // для расчета скидки
+    const fivePercent = (calculateData[0][1] * 5 / 100) === +calculateData[2][1]; // если совпало так, что право это 5% от лево
+    // конец расчета
+    const fastStart = document.querySelectorAll('.fast-start');
+    const discount = document.querySelectorAll('.discount-new-price');
+
+    if (discount.length)
     {
-        document.getElementById('kedo-field').value = 300;
-        calculateData[0][1] = 300;
+        discount[0].remove();
+        fastStart.forEach(item => item.classList.remove('discount-old-price'));
     }
 
-    if (calculateData[1][1] === '')
-    {
-        document.getElementById('vcep-field').value = 2;
-        calculateData[1][1] = 2;
-    }
-    
-    const retailYearD3 = (calculateData[0][1] * unepRetail) + (calculateData[1][1] * ukepRetail);
-    const retailYearD4 = parametrs[calculateData[2][1]];
-    const summaFastStart = Math.round((retailYearD3 + retailYearD4) / 12);
-    const summaFastStartFormatted = summaFastStart.toLocaleString();
-    const summaExtendedFormatted = (summaFastStart + 13708).toLocaleString(); // 164500 / 12 = 13 708.33333333
+    let summaFastStartFormatted;
+    let summaFastStartFormattedDiscount;
+    let summaExtendedFormatted;
 
-    Array.from(document.querySelectorAll('.fast-start')).forEach(item => item.innerHTML = `${summaFastStartFormatted} руб`);
-    Array.from(document.querySelectorAll('.extended')).forEach(item => item.innerHTML = `${summaExtendedFormatted} руб`);
+    const result = calculation(calculateData[0][1], calculateData[1][1], calculateData[2][1], 1);
+    summaFastStartFormatted = result[0];
+    summaExtendedFormatted = result[1];
+
+    if (fivePercent) {
+        const prices = document.querySelectorAll('.prices');
+        const desktopPrice = document.querySelector('.price.fast-start');
+        const mobilePrice = document.querySelector('.rates-price-mobile.fast-start');
+
+        const resultDiscount = calculation(calculateData[0][1], 0, calculateData[2][1], 0.6);
+
+        summaFastStartFormattedDiscount = resultDiscount[0];
+
+        const newPrice = [
+            `<span class="price-after-discount discount-new-price">${summaFastStartFormattedDiscount} руб</span>`,
+            `<span class="price-after-discount discount-new-price-mobile">${summaFastStartFormattedDiscount} руб</span>`
+        ];
+
+        desktopPrice.classList.add('discount-old-price');
+        mobilePrice.classList.add('discount-old-price-mobile');
+
+        prices.forEach((item, index) => item.insertAdjacentHTML('afterbegin', newPrice[index]));
+    }
+
+    fastStart.forEach(item => item.innerHTML = `${summaFastStartFormatted} руб`);
+    document.querySelectorAll('.extended').forEach(item => item.innerHTML = `${summaExtendedFormatted} руб`);
 });
