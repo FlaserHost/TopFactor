@@ -124,12 +124,14 @@ document.getElementById('calculate-btn').addEventListener('click', e => {
     const fivePercent = (calculateData[0][1] * 5 / 100) === +calculateData[2][1]; // если совпало так, что право это 5% от лево
     // конец расчета
     const fastStart = document.querySelectorAll('.fast-start');
-    const discount = document.querySelectorAll('.discount-new-price');
+    const discount = document.querySelectorAll('.price-after-discount');
+
+    const classes = ['discount-old-price', 'discount-old-price-mobile'];
 
     if (discount.length)
     {
-        discount[0].remove();
-        fastStart.forEach(item => item.classList.remove('discount-old-price'));
+        discount.forEach(item => item.remove());
+        fastStart.forEach((item, index) => item.classList.remove(classes[index]));
     }
 
     let summaFastStartFormatted;
@@ -142,11 +144,8 @@ document.getElementById('calculate-btn').addEventListener('click', e => {
 
     if (fivePercent) {
         const prices = document.querySelectorAll('.prices');
-        const desktopPrice = document.querySelector('.price.fast-start');
-        const mobilePrice = document.querySelector('.rates-price-mobile.fast-start');
 
         const resultDiscount = calculation(calculateData[0][1], 0, calculateData[2][1], 0.6);
-
         summaFastStartFormattedDiscount = resultDiscount[0];
 
         const newPrice = [
@@ -154,9 +153,7 @@ document.getElementById('calculate-btn').addEventListener('click', e => {
             `<span class="price-after-discount discount-new-price-mobile">${summaFastStartFormattedDiscount} руб</span>`
         ];
 
-        desktopPrice.classList.add('discount-old-price');
-        mobilePrice.classList.add('discount-old-price-mobile');
-
+        fastStart.forEach((item, index) => item.classList.add(classes[index]));
         prices.forEach((item, index) => item.insertAdjacentHTML('afterbegin', newPrice[index]));
     }
 
