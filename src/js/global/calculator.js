@@ -149,7 +149,10 @@ document.getElementById('calculate-btn').addEventListener('click', e => {
         summaFastStartFormattedDiscount = resultDiscount[0];
 
         const newPrice = [
-            `<span class="price-after-discount discount-new-price">${summaFastStartFormattedDiscount} руб</span>`,
+            `<div class="price-after-discount">
+                    <span class="discount-new-price">${summaFastStartFormattedDiscount} руб</span>
+                    <div class="discount-deadline">Срок действия акции до 01.09.2023</div>
+             </div>`,
             `<span class="price-after-discount discount-new-price-mobile">${summaFastStartFormattedDiscount} руб</span>`
         ];
 
